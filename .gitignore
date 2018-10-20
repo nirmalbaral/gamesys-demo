@@ -37,7 +37,7 @@ node_modules/
 jspm_packages/
 errorShots/
 mochawesome-report/
-hudl-automation-result.json
+gamesys-demo-result.json
 
 # TypeScript v1 declaration files
 typings/
