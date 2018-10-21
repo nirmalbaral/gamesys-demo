@@ -11,7 +11,7 @@ describe('virgingames.com Front End Automation', function () {
         expect(loginPage.loginMenu.getText()).to.equal('Login');
     });
 
-    it('should deny access with incorrect credential', function () {
+    it('should deny access with invalid credential', function () {
         loginPage.loginMenu.click();
         loginPage.login('foo', 'bar');
         loginPage.errorMessage.waitForVisible();

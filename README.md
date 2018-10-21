@@ -33,14 +33,18 @@ all tests are depends on availibility of `https://www.virgingames.com/`.
 
 The spec files that list and defined the test cases are under /specs/. The webdriveio settings are configured to the configuration file `wdio.conf.js`.
 
+1. Front End Automation: front end automation tests are written using page object pattern and actual test specs/suites are in `specs` folder, abstraction of page information, selectors and methods are in `pageobjects` folder and general methods and helpers functions are in `helpers` folder. 2 test cases `should display virgingames.com home page` and `should deny access with incorrect credential` are automated in `pages/home.js` test suite.
+
+2. Back End Automation: the given endpoint `https://www.virgingames.com/bingo/GetBingoLobbyFeed.do` is automated in `api/lobbyfeed.js` and validates `'defaultGameFrequency' should always be '300000' or 'startTime' should always be future timestamp` scenario.
+
     .
     ├── ...
     ├── test                    # test folder (alternatively `spec` or `suit`)
     │   ├── helpers             # helpers functions and thirdparty library files
     │   ├── pageobjects         # page object functions files
     │   └── specs               # test specs/suites
-    │       ├── api             # api test specs/suites
-    └── ... └── pages           # pages test specs/suites
+    │       ├── api             # api test suites
+    └── ... └── pages           # pages test suites
 
 #### Adding new tests in a new spec file
 
@@ -54,7 +58,6 @@ Add new spec (it) in the existing file.
 
 Provides intuitive test report after the completion of test by creating test results in the json format file `gamesys-demo-result.json` and generates a report based on [Mochawesome-report][report] and [generator][marge].
 
-[credential]: https://github.com/nirmalbaral/gamesys-demo/blob/master/test/pageobjects/page.js#L15
 [report]: https://github.com/adamgruber/mochawesome
 [marge]: https://github.com/adamgruber/mochawesome-report-generator
 [node]: https://nodejs.org/en/download/

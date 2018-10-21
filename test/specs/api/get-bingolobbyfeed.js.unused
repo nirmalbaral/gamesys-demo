@@ -1,0 +1,23 @@
+var request = require('supertest')("https://www.virgingames.com"),
+    expect = require('chai').expect,
+    obj, stream;
+
+describe("Virgin Games - Bingo Back End Automation", function () {
+
+    it("validate 'defaultGameFrequency' should always be '300000' or 'startTime' should always be future timestamp", function (done) {
+        request
+        .get('/bingo/GetBingoLobbyFeed.do')
+        .expect(200)
+        .end(function (err, res) {
+            if (err) return done(err);
+            obj = JSON.parse(res.text);
+            expect(obj).to.have.a.property('bingoLobbyInfoResource');
+            stream = obj.bingoLobbyInfoResource.streams;
+            for (var i=0; i<stream.length; i++) {
+                expectation =  (stream[i].startTime > Date.now() && stream[i].defaultGameFrequency === 300000)  ? true : false;
+            }
+            expect(expectation).to.be.true;
+            done();    
+        });
+    });
+});
