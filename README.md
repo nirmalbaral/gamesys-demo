@@ -33,18 +33,14 @@ all tests are depends on availibility of `https://www.virgingames.com/`.
 
 The spec files that list and defined the test cases are under /specs/. The webdriveio settings are configured to the configuration file `wdio.conf.js`.
 
-1. Front End Automation: front end automation tests are written using page object pattern and actual test specs/suites are in `specs` folder, abstraction of page information, selectors and methods are in `pageobjects` folder and general methods and helpers functions are in `helpers` folder. 2 test cases `should display virgingames.com home page` and `should deny access with incorrect credential` are automated in `pages/home.js` test suite.
-
-2. Back End Automation: the given endpoint `https://www.virgingames.com/bingo/GetBingoLobbyFeed.do` is automated in `api/lobbyfeed.js` and validates `'defaultGameFrequency' should always be '300000' or 'startTime' should always be future timestamp` scenario.
-
     .
     ├── ...
     ├── test                    # test folder (alternatively `spec` or `suit`)
     │   ├── helpers             # helpers functions and thirdparty library files
     │   ├── pageobjects         # page object functions files
     │   └── specs               # test specs/suites
-    │       ├── api             # api test suites
-    └── ... └── pages           # pages test suites
+    │       ├── api             # api test specs/suites
+    └── ... └── pages           # pages test specs/suites
 
 #### Adding new tests in a new spec file
 
