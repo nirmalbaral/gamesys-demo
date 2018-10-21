@@ -31,7 +31,7 @@ all tests are depends on availibility of `https://www.virgingames.com/`.
 
 ### Project stucture
 
-1. Front End Automation: front end automation tests are written using page object pattern and actual test specs/suites are in `specs` folder, abstraction of page information, selectors and methods are in `pageobjects` folder and general methods and helpers functions are in `helpers` folder. 2 test cases `should display virgingames.com home page` and `should deny access with incorrect credential` are automated in `pages/home.js` test suite.
+1. Front End Automation: front end automation tests are written using page object pattern and actual test specs/suites are in `test/specs` folder, abstraction of page information, selectors and methods are in `pageobjects` folder and general methods and helpers functions are in `helpers` folder. 2 test cases `should display virgingames.com home page` and `should deny access with incorrect credential` are automated in `pages/home.js` test suite.
 
 2. Back End Automation: the given endpoint `https://www.virgingames.com/bingo/GetBingoLobbyFeed.do` is automated in `api/lobbyfeed.js` and validates `'defaultGameFrequency' should always be '300000' or 'startTime' should always be future timestamp` scenario.
 
